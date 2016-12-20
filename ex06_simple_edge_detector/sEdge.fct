@@ -1,0 +1,3 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"sEdge.c" LINE:204
+srand DSTACK_USAGE:2 DSTACK_LEVEL:2 FILE:"D:\Extc\cvavr\lib\stdlib.lib" LINE:864
+timer0_ovf_isr DSTACK_USAGE:5 DSTACK_LEVEL:7 FILE:"sEdge.c" LINE:50

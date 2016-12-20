@@ -1,0 +1,19 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+sensors                                                           0160h        7
+_seed                                                             0167h        4
+p                                                                 016Bh        2
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+adcch                                                             R5           1
+tmp                                                               R4           1
+dir                                                               R7           1
+dCtr                                                              R8,R9        2
+TMOUT                                                             R6           1

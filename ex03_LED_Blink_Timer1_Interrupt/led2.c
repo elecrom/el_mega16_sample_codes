@@ -1,0 +1,132 @@
+/*****************************************************
+Chip type           : ATmega16
+Program type        : Application
+Clock frequency     : 16.000000 MHz
+Memory model        : Small
+External RAM size   : 0
+Data Stack size     : 256
+
+What does this program do ?
+###########################
+
+- Blinks the LED on PB0 at 1Hz using Timer1 CTC Interrupt.
+- Timer1 is configured to run in CTC mode. Timer resets when
+  compare match occurs between OCR1A and TCNT1. And interrupt
+  is generated.
+- State of the PB0 is toggled on every interrupt.
+*****************************************************/
+
+#include <mega16.h>
+
+// Timer 1 output compare A interrupt service routine
+interrupt [TIM1_COMPA] void timer1_compa_isr(void)
+{
+	//toggle PB0
+   PORTB = PORTB ^ 0b00000001;
+
+}
+
+void main(void)
+{
+
+// Input/Output Ports initialization
+// Port A initialization
+// Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
+// State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=T
+PORTA=0x00;
+DDRA=0x00;
+
+// Port B initialization
+// Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=Out
+// State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=0
+PORTB=0x00;
+DDRB =0x01;
+
+// Port C initialization
+// Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
+// State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=T
+PORTC=0x00;
+DDRC=0x00;
+
+// Port D initialization
+// Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
+// State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=T
+PORTD=0x00;
+DDRD=0x00;
+
+// Timer/Counter 0 initialization
+// Clock source: System Clock
+// Clock value: Timer 0 Stopped
+// Mode: Normal top=FFh
+// OC0 output: Disconnected
+TCCR0=0x00;
+TCNT0=0x00;
+OCR0=0x00;
+
+// Timer/Counter 1 initialization
+// Clock source: System Clock
+// Clock value: 15.625 kHz
+// Mode: CTC top=OCR1A
+// OC1A output: Discon.
+// OC1B output: Discon.
+// Noise Canceler: Off
+// Input Capture on Falling Edge
+// Timer 1 Overflow Interrupt: Off
+// Input Capture Interrupt: Off
+// Compare A Match Interrupt: On
+// Compare B Match Interrupt: Off
+
+
+/* Timer Clock = 15625Hz
+ * Timer Mode  = Clear timer on compare match (CTC) with interrupt on match.
+ * Desired LED blinking rate 	= 1Hz
+ * => compare match rate   	= 2Hz (twice of 1Hz)
+ * => OCR1A value					= 15625/2 = 7812 - 1 = 7811 = 0x1E83
+ */
+
+
+TCCR1A=0x00;
+TCCR1B=0x0D;
+TCNT1H=0x00;
+TCNT1L=0x00;
+ICR1H=0x00;
+ICR1L=0x00;
+OCR1AH=0x1E;
+OCR1AL=0x83;
+
+
+
+// Timer/Counter 2 initialization
+// Clock source: System Clock
+// Clock value: Timer 2 Stopped
+// Mode: Normal top=FFh
+// OC2 output: Disconnected
+ASSR=0x00;
+TCCR2=0x00;
+TCNT2=0x00;
+OCR2=0x00;
+
+// External Interrupt(s) initialization
+// INT0: Off
+// INT1: Off
+// INT2: Off
+MCUCR=0x00;
+MCUCSR=0x00;
+
+// Timer(s)/Counter(s) Interrupt(s) initialization
+TIMSK=0x10;
+
+// Analog Comparator initialization
+// Analog Comparator: Off
+// Analog Comparator Input Capture by Timer/Counter 1: Off
+ACSR=0x80;
+SFIOR=0x00;
+
+// Global enable interrupts
+#asm("sei")
+
+while (1)
+      {
+
+      };
+}

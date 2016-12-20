@@ -1,0 +1,28 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+i                                                                 0267h        2
+adc_val                                                           0269h        1
+lcdPresent                                                        026Ah        1
+adc_volt                                                          026Bh        2
+_seed                                                             026Dh        4
+_base_y                                                           0271h        4
+_lcd_x                                                            0275h        1
+_lcd_y                                                            0276h        1
+_lcd_maxx                                                         0277h        1
+p                                                                 0278h        2
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+iH                                                                R5           1
+iL                                                                R4           1
+i2c_rv                                                            R7           1
+t                                                                 R8,R9        2
+i1                                                                R10,R11      2
+i2                                                                R12,R13      2
+j                                                                 R6           1

@@ -1,0 +1,2 @@
+avrdude -c usbasp -p m16 -U flash:w:.\exe\sEdge.hex
+Pause

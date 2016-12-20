@@ -1,0 +1,6 @@
+VERSION:1 SOURCE_TIMESTAMP:394A8244
+NODE:I LEVEL:0 LINE:18 "d:\extc\cvavr\inc\mega16.h"
+NODE:I LEVEL:0 LINE:19 "d:\extc\cvavr\inc\delay.h"
+NODE:V LEVEL:0 LINE:21 "A -> RAM:????"
+NODE:V LEVEL:0 LINE:22 "B -> RAM:????"
+NODE:V LEVEL:0 LINE:23 "i -> R5"

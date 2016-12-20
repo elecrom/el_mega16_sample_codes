@@ -1,0 +1,12 @@
+# How to compile FreeRTOS example ?
+-----------------------------------
+- Extract eclipse.rar located in "softwares" folder on this CD, to convenient location.
+- Start the Eclipse.
+- You may get some error during the start-up. Just ignore.
+- Click File>Switch Workspace>Other...
+- Workspace switching diaglog box will appear. Click Browse.
+- Now select the folder "ex10_FreeRTOS_LEDBlink_WinAVR" and click OK. Again click OK. 
+- Eclipse will restart automatically in workspace "ex10_FreeRTOS_LEDBlink_WinAVR" with project "FreeRTOS_m16_Demo" loaded automatically.
+- Click on Project>Build All(or Ctrl+B) menu to build the project.
+- After sucessfull build hex file will be located in .\Release\FreeRTOS_m16_demo.hex
+- Now you can use your AVR burning software to upload this code to uC.

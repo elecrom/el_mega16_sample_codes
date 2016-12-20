@@ -1,0 +1,7 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"m16brd.c" LINE:387
+lcd_test DSTACK_USAGE:4 DSTACK_LEVEL:4 FILE:"m16brd.c" LINE:260
+printf DSTACK_USAGE:6 DSTACK_LEVEL:10 FILE:"d:\extc\cvavr\lib\stdio.lib" LINE:1334
+_print DSTACK_USAGE:25 DSTACK_LEVEL:35 FILE:"d:\extc\cvavr\lib\stdio.lib" LINE:558
+_put DSTACK_USAGE:7 DSTACK_LEVEL:42 FILE:"d:\extc\cvavr\lib\stdio.lib" LINE:228
+putchar DSTACK_USAGE:1 DSTACK_LEVEL:43 FILE:"d:\extc\cvavr\lib\stdio.lib" LINE:163
+timer1_ovf_isr DSTACK_USAGE:2 DSTACK_LEVEL:45 FILE:"m16brd.c" LINE:88

@@ -1,0 +1,6 @@
+Connections :
+-------------
+
+PORTB 	= 8 LEDs
+PORTC.2 	= Button 1. Button press grounds the pin.
+PORTC.3	= Button 2. Button press grounds the pin.
